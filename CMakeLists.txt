@@ -3,12 +3,11 @@ project(CPlayground C)
 
 set(CMAKE_C_STANDARD 99)
 
-#set(APP_TARGET cplayground.app)
-
 #set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 
 #include_directories("/usr/local/include/CGLM")
 
+add_executable(0_environment triangle-tutorial/0_environment.c)
 add_executable(1_base_code triangle-tutorial/1_base_code.c)
 add_executable(1-2_base_code triangle-tutorial/1-2_base_code.c)
 add_executable(CPlayground main.c)
@@ -35,6 +34,7 @@ if (WIN32)
     # nothing now
 endif (WIN32)
 
+target_link_libraries(0_environment Vulkan::Vulkan glfw ${GLFW_LIBRARIES})
 target_link_libraries(1_base_code Vulkan::Vulkan glfw ${GLFW_LIBRARIES})
 target_link_libraries(1-2_base_code Vulkan::Vulkan glfw ${GLFW_LIBRARIES})
 target_link_libraries(CPlayground Vulkan::Vulkan glfw ${GLFW_LIBRARIES})
