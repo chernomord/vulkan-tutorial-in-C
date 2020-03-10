@@ -74,9 +74,9 @@ void app_createInstance(App *me) {
     }
 
     if (matchedExtensions == glfwExtensionCount) {
-        printf("All GLFW extensions supported");
+        printf("\nAll GLFW extensions supported");
     } else {
-        printf("Some GLFW extensions not supported. Present: %d, matched: %d", glfwExtensionCount, matchedExtensions);
+        printf("\nSome GLFW extensions not supported. Present: %d, matched: %d", glfwExtensionCount, matchedExtensions);
     }
 
     free(properties);
