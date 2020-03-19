@@ -11,14 +11,12 @@ const int HEIGHT = 600;
 
 int checkGLFWExtension(char *vkExtName, const char **glfwExtArr, int glfwExtLen) {
     int result = 0;
-    for (int i = 0; i  <glfwExtLen; i++) {
+    for (int i = 0; i < glfwExtLen; i++) {
         result += (strcmp(vkExtName, glfwExtArr[i]) == 0) ? 1 : 0;
     }
     return result;
 }
 
-// Object oriented code below, represents App Class.
-// The goal for this is to mimic original C++ tutorial code as close as possible.
 typedef struct AppTag {
     GLFWwindow *window;
     VkInstance instance;
@@ -60,7 +58,7 @@ void app_createInstance(App *me) {
     // get Vulkan Extensions
     uint32_t extensionCount = 0;
     vkEnumerateInstanceExtensionProperties(NULL, &extensionCount, NULL);
-    VkExtensionProperties *properties = malloc(extensionCount * sizeof(VkExtensionProperties));
+    VkExtensionProperties *properties = (VkExtensionProperties *) malloc(extensionCount * sizeof(VkExtensionProperties));
     vkEnumerateInstanceExtensionProperties(NULL, &extensionCount, properties);
 
     printf("Available extensions:\n");

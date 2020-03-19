@@ -7,8 +7,6 @@
 const int WIDTH = 800;
 const int HEIGHT = 600;
 
-// Object oriented code below, represents App Class.
-// The goal for this is to mimic original C++ tutorial code as close as possible.
 typedef struct AppTag {
     GLFWwindow *window;
 } App;
