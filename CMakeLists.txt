@@ -3,14 +3,16 @@ project(CPlayground C)
 
 set(CMAKE_C_STANDARD 99)
 
-#set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
+if (CMAKE_BUILD_TYPE MATCHES Debug)
+    add_definitions( -DDEBUG )
+endif(CMAKE_BUILD_TYPE MATCHES Debug)
 
-#include_directories("/usr/local/include/CGLM")
 
 add_executable(0_environment triangle-tutorial/0_environment.c triangle-tutorial/2_setup_instance.c)
 add_executable(1_base_code triangle-tutorial/1_setup_base_code.c)
 add_executable(1-2_base_code triangle-tutorial/1-2_setup_base_code.c)
 add_executable(2_setup_instance triangle-tutorial/2_setup_instance.c)
+add_executable(3_setup_validation triangle-tutorial/3_setup_validation-layers.c)
 add_executable(CPlayground main.c)
 
 # VulkanSDK
@@ -39,4 +41,5 @@ target_link_libraries(0_environment Vulkan::Vulkan glfw ${GLFW_LIBRARIES})
 target_link_libraries(1_base_code Vulkan::Vulkan glfw ${GLFW_LIBRARIES})
 target_link_libraries(1-2_base_code Vulkan::Vulkan glfw ${GLFW_LIBRARIES})
 target_link_libraries(2_setup_instance Vulkan::Vulkan glfw ${GLFW_LIBRARIES})
+target_link_libraries(3_setup_validation Vulkan::Vulkan glfw ${GLFW_LIBRARIES})
 target_link_libraries(CPlayground Vulkan::Vulkan glfw ${GLFW_LIBRARIES})

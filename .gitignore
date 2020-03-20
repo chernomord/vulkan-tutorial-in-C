@@ -142,5 +142,6 @@ dkms.conf
 0_environment
 1_base_code
 1-2_base_code
+3_setup_validation
 CPlayground
 CPlayground.cbp
