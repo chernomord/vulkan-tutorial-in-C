@@ -57,7 +57,6 @@ void app_createInstance(App *me) {
     };
 
     if (enableValidationLayers) {
-        printf("lol");
         createInfo.enabledLayerCount = (uint32_t) validationLayersCount;
         createInfo.ppEnabledLayerNames = validationLayers;
     } else {
@@ -131,8 +130,6 @@ bool app_checkValidationLayerSupport() {
 }
 
 int main(int argc, char **argv) {
-
-//    printf("%d", DEBUG);
 
     App app;
 
