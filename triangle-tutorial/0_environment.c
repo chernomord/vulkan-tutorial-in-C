@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include <vulkan/vulkan.h>
 
-#include <cglm/vec4.h>
-#include <cglm/mat4.h>
+#include "../cglm/vec4.h"
+#include "../cglm/mat4.h"
 
 int main() {
     glfwInit();

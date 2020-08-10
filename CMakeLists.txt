@@ -16,7 +16,7 @@ add_executable(3_setup_validation triangle-tutorial/3_setup_validation-layers.c)
 add_executable(CPlayground main.c)
 
 # VulkanSDK
-find_package(vulkan REQUIRED)
+find_package(Vulkan REQUIRED)
 
 # GLFW
 find_package(glfw3 REQUIRED)
